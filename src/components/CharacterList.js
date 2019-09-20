@@ -12,7 +12,7 @@ export default function CharacterList() {
       .get(characterApi)
       .then(res => {
         setCharacterList(res.data.results);
-        console.log("this", res.data.results);
+        console.log("Yassssss", res.data.results);
       })
       .catch(err => {
         return err.message;
@@ -28,11 +28,11 @@ export default function CharacterList() {
     <section className="character-list">
        <Header />
       {characterList.map(character => (
-        <React.Fragment>
+        <div>
         <h3 key={character.name}> {character.name}</h3>
         <h5 key={character.gender}> {character.gender}</h5>
         <h6 key={character.status}> {character.status}</h6>
-        </React.Fragment>
+        </div>
       ))}
     </section>
   );
