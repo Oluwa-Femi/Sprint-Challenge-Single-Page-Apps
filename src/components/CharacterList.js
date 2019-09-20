@@ -3,7 +3,7 @@ import axios from "axios";
 import Header from "./Header";
 
 const characterApi = "https://rickandmortyapi.com/api/character/";
-export default function CharacterList() {
+function CharacterList() {
   // TODO: Add useState to track data from useEffect
   const [characterList, setCharacterList] = useState([]);
 
@@ -14,8 +14,8 @@ export default function CharacterList() {
         setCharacterList(res.data.results);
         console.log("Yassssss", res.data.results);
       })
-      .catch(err => {
-        return err.message;
+      .catch(error => {
+        console.error(error);
       });
   };
   useEffect(() => {
@@ -37,3 +37,5 @@ export default function CharacterList() {
     </section>
   );
 }
+
+export default CharacterList;
