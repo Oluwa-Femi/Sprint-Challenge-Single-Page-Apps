@@ -28,7 +28,11 @@ export default function CharacterList() {
     <section className="character-list">
        <Header />
       {characterList.map(character => (
-        <h5 key={character.name}> {character.name}</h5>
+        <React.Fragment>
+        <h3 key={character.name}> {character.name}</h3>
+        <h5 key={character.gender}> {character.gender}</h5>
+        <h6 key={character.status}> {character.status}</h6>
+        </React.Fragment>
       ))}
     </section>
   );
